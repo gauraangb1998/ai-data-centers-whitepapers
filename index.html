@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible AI Data Centers | Gauraang Biyani</title>
+  <meta name="description" content="Venture discovery research on AI data centers and grid capacity, running since January 2026. Three papers by Gauraang Biyani, Stanford MS-MBA'28.">
+  <meta property="og:title" content="Flexible AI Data Centers: Pathways to Power AI Sustainably">
+  <meta property="og:description" content="Venture discovery research on AI data centers and grid capacity, built on 200+ conversations with developers, utilities, and investors.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #14161c;
+      --ink-soft: #52586a;
+      --ink-mute: #8b91a1;
+      --border: #e6e8ed;
+      --accent: #2f5fe0;
+
+      --fs-label: 0.75rem;
+      --fs-body: 0.94rem;
+      --fs-lead: 1.05rem;
+      --fs-title: 1.35rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: var(--fs-body);
+      font-weight: 400;
+      background: #fff;
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .label {
+      font-size: var(--fs-label);
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    strong { font-weight: 500; color: var(--ink); }
+
+    /* ---------- Header ---------- */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 3.2rem 0 3.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .hero .wrap { position: relative; z-index: 1; }
+
+    .hero-byline {
+      font-size: var(--fs-label);
+      color: var(--ink-mute);
+      margin-bottom: 2.4rem;
+    }
+
+    .hero-byline a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-byline a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 5vw, 2.9rem);
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-sub {
+      font-size: var(--fs-lead);
+      color: var(--ink-mute);
+      margin-bottom: 1.9rem;
+    }
+
+    .hero-lead {
+      font-size: var(--fs-lead);
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 620px;
+    }
+
+    /* ---------- Papers ---------- */
+
+    .papers { padding: 3rem 0 1rem; }
+
+    .papers .label { margin-bottom: 0.5rem; }
+
+    .paper {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 2.5rem;
+      padding: 2.2rem 0;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    .paper:last-of-type { border-bottom: 1px solid var(--border); }
+
+    .paper::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 54px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    @media (max-width: 720px) {
+      .paper { grid-template-columns: 1fr; gap: 1.2rem; }
+    }
+
+    .paper-part {
+      font-size: var(--fs-label);
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .rail-meta {
+      font-size: var(--fs-label);
+      color: var(--ink-mute);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .rail-meta b {
+      display: block;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .rail-list {
+      list-style: none;
+      font-size: var(--fs-label);
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    .rail-list li {
+      padding-left: 0.75rem;
+      margin-bottom: 0.4rem;
+      position: relative;
+    }
+
+    .rail-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--ink-mute);
+    }
+
+    .rail-list b { font-weight: 500; color: var(--ink); }
+
+    .paper-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 0.9rem;
+    }
+
+    @media (max-width: 560px) {
+      .paper-head { flex-direction: column; gap: 1rem; }
+    }
+
+    .paper-title {
+      font-size: var(--fs-title);
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+      padding: 0.62rem 1.15rem;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-size: var(--fs-body);
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.18s;
+    }
+
+    .cta:hover { opacity: 0.85; }
+    .cta .arrow { transition: transform 0.18s; }
+    .cta:hover .arrow { transform: translateX(3px); }
+
+    .pending {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-shrink: 0;
+      padding: 0.62rem 1.15rem;
+      border-radius: 6px;
+      border: 1px dashed var(--ink-mute);
+      color: var(--ink-mute);
+      font-size: var(--fs-body);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .paper-desc {
+      color: var(--ink-soft);
+      margin-bottom: 1.2rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: var(--fs-label);
+      color: var(--ink-mute);
+      padding: 0.22rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    /* ---------- About ---------- */
+
+    .about { padding: 2.6rem 0 1rem; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 720px) {
+      .about-grid { grid-template-columns: 1fr; gap: 1rem; }
+    }
+
+    .about p { color: var(--ink-soft); }
+    .about p + p { margin-top: 1rem; }
+
+    .about a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .about a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ---------- Footer ---------- */
+
+    .footer {
+      padding: 2.5rem 0;
+      font-size: var(--fs-label);
+      color: var(--ink-mute);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <svg class="hero-grid" viewBox="0 0 1200 460" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g stroke="#2f5fe0" stroke-width="0.5" opacity="0.16">
+        <line x1="0" y1="90" x2="1200" y2="90"/>
+        <line x1="0" y1="210" x2="1200" y2="210"/>
+        <line x1="0" y1="330" x2="1200" y2="330"/>
+        <line x1="220" y1="0" x2="220" y2="460"/>
+        <line x1="520" y1="0" x2="520" y2="460"/>
+        <line x1="820" y1="0" x2="820" y2="460"/>
+        <line x1="1060" y1="0" x2="1060" y2="460"/>
+      </g>
+      <path d="M0 270 Q 200 270, 300 200 Q 400 130, 550 200 Q 700 270, 850 200 Q 1000 130, 1200 200" stroke="#2f5fe0" stroke-width="1" fill="none" opacity="0.28"/>
+      <path d="M0 350 Q 250 350, 400 295 Q 550 240, 700 315 Q 850 390, 1000 295 Q 1100 245, 1200 275" stroke="#2f5fe0" stroke-width="1" fill="none" opacity="0.16"/>
+      <g fill="#2f5fe0" opacity="0.32">
+        <circle cx="300" cy="200" r="3"/>
+        <circle cx="550" cy="200" r="3"/>
+        <circle cx="850" cy="200" r="3"/>
+        <circle cx="400" cy="295" r="3"/>
+        <circle cx="700" cy="315" r="3"/>
+        <circle cx="1000" cy="295" r="3"/>
+      </g>
+    </svg>
+
+    <div class="wrap">
+      <p class="hero-byline">
+        Gauraang Biyani · Stanford MS-MBA’28 ·
+        <a href="mailto:gbiyani@stanford.edu">gbiyani@stanford.edu</a> ·
+        <a href="https://www.linkedin.com/in/gauraang-b-50881799/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <h1 class="hero-title">Flexible AI Data Centers</h1>
+      <p class="hero-sub">Pathways to Power AI Sustainably</p>
+      <p class="hero-lead">
+        Venture discovery research on AI data centers and grid capacity, running since
+        January 2026. Across three papers and <strong>200+</strong> conversations with developers,
+        utilities, grid operators, and investors, I test one thesis:
+        <strong>the energy bottleneck for AI is not generating electrons, it is moving them
+        where and when they are demanded.</strong>
+      </p>
+    </div>
+  </header>
+
+  <main class="papers">
+    <div class="wrap">
+      <p class="label">The Series</p>
+
+      <article class="paper">
+        <div>
+          <p class="paper-part">Part I</p>
+          <p class="rail-meta">
+            April 2026
+            <b>Stanford I4CS</b>
+            Innovation for Climate and Sustainability
+          </p>
+          <ul class="rail-list">
+            <li><b>70+</b> interviews</li>
+            <li>DistribuTECH, San Diego</li>
+          </ul>
+        </div>
+        <div>
+          <div class="paper-head">
+            <h2 class="paper-title">Four Pathways to Power AI Sustainably</h2>
+            <a class="cta" href="https://drive.google.com/file/d/1xVGzzpto65MoUB__Hz0uA05Accbd4Xlk/view?usp=sharing" target="_blank" rel="noopener">
+              Read Part I <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+          <p class="paper-desc">
+            My starting hypothesis was that the answer is building more clean generation.
+            That turned out to be wrong. The grid already runs at only <strong>40-60% of its
+            capacity on an average day</strong>, and data centers make this worse by reserving
+            power for a worst case in which every server runs flat out and the backup generator
+            fails at the same moment. Duke University modeling suggests that if large loads
+            curtailed just 0.5% of their annual consumption, the existing grid could absorb
+            98 GW of new data center load.
+          </p>
+          <p class="paper-desc">
+            The paper sets out four layers of flexibility.
+            <strong>Flexible compute:</strong> shifting or slowing workloads during grid stress.
+            <strong>Flexible facilities:</strong> on-site utility-scale batteries that let a site
+            island from the grid.
+            <strong>Facility orchestration:</strong> coordinating cooling, backup power and
+            workloads to release the 30-50% of installed capacity already sitting unused inside
+            data centers.
+            <strong>Flexible offsets:</strong> financing capacity elsewhere on the local grid to
+            offset the facility&rsquo;s own footprint. It closes with four startup white spaces.
+          </p>
+          <div class="tags">
+            <span class="tag">Flexible Compute</span>
+            <span class="tag">Flexible Facilities</span>
+            <span class="tag">Facility Orchestration</span>
+            <span class="tag">Flexible Offsets</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper">
+        <div>
+          <p class="paper-part">Part II</p>
+          <p class="rail-meta">
+            June 2026
+            <b>Independent Study</b>
+            Advised by Steve Westly, The Westly Group
+          </p>
+          <ul class="rail-list">
+            <li><b>30+</b> new interviews</li>
+            <li>SF Climate Week</li>
+            <li>Stanford Sustainable Data Centers Symposium</li>
+          </ul>
+        </div>
+        <div>
+          <div class="paper-head">
+            <h2 class="paper-title">Stress-Testing the Thesis</h2>
+            <a class="cta" href="https://docs.google.com/document/d/1cnM9kHOUb_kDVKs3fx8s-zxGqKIp6gTBdsKntI3T9xo/edit?usp=sharing" target="_blank" rel="noopener">
+              Read Part II <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+          <p class="paper-desc">
+            Three months after Part I, deals had closed and several startups had changed their
+            go-to-market, so I retested each hypothesis. Voltus walked me through the full
+            mechanics of bring your own capacity, and in June 2026 <strong>Google signed a
+            three-year agreement to fund up to 100 MW of that capacity annually in PJM</strong>.
+            Pebble showed a different route to flexible compute: rather than move workloads, cap
+            each GPU at its efficiency knee, which cut power 20% while increasing total tokens
+            generated.
+          </p>
+          <p class="paper-desc">
+            The paper also revisits whether batteries belong at the rack or the campus, and adds a
+            fifth layer the first paper skipped: <strong>community approval</strong>. Meta cancelled
+            a $1 billion project in Michigan after sustained local opposition, and 40% of projects
+            that meet public opposition are cancelled outright.
+          </p>
+          <div class="tags">
+            <span class="tag">BYOC via VPP</span>
+            <span class="tag">GPU Power Capping</span>
+            <span class="tag">Rack vs Campus BESS</span>
+            <span class="tag">Community Approval</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper">
+        <div>
+          <p class="paper-part">Part III</p>
+          <p class="rail-meta">
+            Summer 2026
+            <b>Stanford EcoSprint</b>
+            Venture discovery program
+          </p>
+          <ul class="rail-list">
+            <li><b>50+</b> new conversations</li>
+            <li><b>10</b> cities, <b>3</b> conferences</li>
+            <li>Portland General Electric control room, Hillsboro</li>
+            <li>Digital Realty data center, Hillsboro</li>
+            <li>H5 Data Centers colocation, Seattle</li>
+            <li>Base Power (Austin), Panthalassa (Portland), Lod.io (Vancouver)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="paper-head">
+            <h2 class="paper-title">From Research to Venture</h2>
+            <span class="pending">Publishing this summer</span>
+          </div>
+          <p class="paper-desc">
+            I spent the summer on Stanford&rsquo;s EcoSprint venture discovery program, traveling to
+            10 cities for conferences and site visits and couchsurfing along the way. I tested 12
+            startup ideas against four questions: does someone have this pain, will they pay, can I
+            build a moat, does it scale? Nine were ruled out. The three that remain came from a
+            problem developers raised repeatedly: siting a $100M+ data center depends on whether a
+            nearby substation has spare capacity, and today nobody can tell.
+            <strong>One developer called it a blind game of battleships.</strong>
+          </p>
+          <div class="tags">
+            <span class="tag">Substation Headroom</span>
+            <span class="tag">Powered Land</span>
+            <span class="tag">Social License</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <section class="about">
+    <div class="wrap about-grid">
+      <p class="label">About</p>
+      <div>
+        <p>
+          Gauraang Biyani is an MS-MBA candidate at Stanford (’28), based in the Bay Area.
+          Before Stanford he spent five years in climate and energy: carbon removal at
+          <strong>Varaha</strong>, and energy and development consulting at <strong>Dalberg</strong>,
+          covering off-grid solar, industrial decarbonization, and nature-based solutions across
+          India. He studied at <strong>NYU Abu Dhabi</strong>.
+        </p>
+        <p>
+          This research draws on 200+ conversations with data center developers, utility
+          transmission planners, grid operators, climate-tech founders, and infrastructure investors.
+        </p>
+        <p>
+          <a href="mailto:gbiyani@stanford.edu">gbiyani@stanford.edu</a> &nbsp;·&nbsp;
+          <a href="https://www.linkedin.com/in/gauraang-b-50881799/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">© 2026 Gauraang Biyani</div>
+  </footer>
+
+</body>
+</html>
