@@ -89,33 +89,70 @@
 
   /* ---------- counting facts ---------- */
 
+  // The counting numbers run even when the reader prefers reduced motion:
+  // nothing moves or scales, only the digits change, and they are the point
+  // of the strip. Every other effect on the page stays gated.
   function countUp() {
-    var nums = document.querySelectorAll('.facts-row b');
-    if (!nums.length) return;
-    if (reduce || !('IntersectionObserver' in window)) return;
+    var nums = [].slice.call(document.querySelectorAll('.facts-row b'));
+    if (!nums.length || !('IntersectionObserver' in window)) return;
+
+    nums.forEach(function (n, i) {
+      n.dataset.order = String(i);
+      n.dataset.target = n.textContent.trim();
+    });
 
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         io.unobserve(e.target);
-        var raw = e.target.textContent.trim();
-        var m = raw.match(/^(\d+)(\D*)$/);
-        if (!m) return;
-        var target = parseInt(m[1], 10);
-        var suffix = m[2];
-        var dur = 750;
-        var t0 = performance.now();
-        e.target.textContent = '0' + suffix;
-        (function step(now) {
-          var p = Math.min(1, (now - t0) / dur);
-          var eased = 1 - Math.pow(1 - p, 3);
-          e.target.textContent = Math.round(target * eased) + suffix;
-          if (p < 1) requestAnimationFrame(step);
-        })(t0);
+        run(e.target);
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.4 });
 
-    [].forEach.call(nums, function (n) { io.observe(n); });
+    function run(node) {
+      var m = (node.dataset.target || node.textContent).trim().match(/^(\d+)(\D*)$/);
+      if (!m) return;
+      var target = parseInt(m[1], 10);
+      var suffix = m[2];
+      var dur = 1100;
+      var delay = Number(node.dataset.order || 0) * 120;
+
+      // The node keeps its real value until the first animation frame runs.
+      // requestAnimationFrame is paused on a hidden or backgrounded page, so
+      // zeroing it up front would leave a strip of 0s that never counts back.
+      var done = false;
+      function finish() {
+        if (done) return;
+        done = true;
+        node.textContent = target + suffix;
+      }
+      // If frames stop arriving mid-count, snap to the real number.
+      var safety = setTimeout(finish, delay + dur + 2000);
+
+      setTimeout(function () {
+        // Seed the clock from the first frame. A timestamp taken outside rAF
+        // can be later than the frame's own, which makes progress negative
+        // and briefly renders a negative count.
+        var t0 = null;
+        requestAnimationFrame(function step(now) {
+          if (done) return;
+          if (t0 === null) t0 = now;
+          var p = Math.min(1, Math.max(0, (now - t0) / dur));
+          if (p < 1) {
+            node.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+            requestAnimationFrame(step);
+          } else {
+            clearTimeout(safety);
+            finish();
+          }
+        });
+      }, delay);
+    }
+
+    nums.forEach(function (n) { io.observe(n); });
+
+    // Lets the count be replayed, and gives a way to check it is running.
+    window.__recount = function () { nums.forEach(run); };
   }
 
   /* ---------- sliding tab indicator ---------- */

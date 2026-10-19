@@ -5,28 +5,28 @@
    "name": "Finding Power",
    "message": "Only the Utility Knows How Much Capacity Is Left",
    "hid": "h.bcz55id5sjhi",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.bcz55id5sjhi"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.bcz55id5sjhi"
   },
   {
    "num": "4",
    "name": "Connecting to the Grid",
    "message": "Faster Is Possible, at the Price of Batteries or Power Cuts",
    "hid": "h.e3b447t39mv",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.e3b447t39mv"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.e3b447t39mv"
   },
   {
    "num": "5",
    "name": "Building",
    "message": "Power in Hand Isn’t Enough When Designs, Crews, and Towns Keep Changing",
    "hid": "h.fhrp3lmiqaeg",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.fhrp3lmiqaeg"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.fhrp3lmiqaeg"
   },
   {
    "num": "6",
    "name": "Operating",
    "message": "Campuses Add Power Plants, but Not the Crews to Run Them",
    "hid": "h.nr8lnr368ywb",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.nr8lnr368ywb"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.nr8lnr368ywb"
   }
  ],
  "ideas": [
@@ -47,7 +47,7 @@
    "climate": "It uses wind and solar power that would go to waste. Flared gas helps less, since the gas still burns.",
    "from_part2": false,
    "band": "promising",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.vke2tdbzcwv2"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.vke2tdbzcwv2"
   },
   {
    "num": "3.2",
@@ -66,7 +66,7 @@
    "climate": "It uses existing grid connections instead of new lines and power plants.",
    "from_part2": false,
    "band": "promising",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.djjxb4vohxtx"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.djjxb4vohxtx"
   },
   {
    "num": "3.3",
@@ -85,7 +85,7 @@
    "climate": "It steers new sites toward substations with real spare capacity.",
    "from_part2": true,
    "band": "weak",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.uzxxptlbife"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.uzxxptlbife"
   },
   {
    "num": "3.4",
@@ -104,7 +104,7 @@
    "climate": "It puts data centers where the grid already has room.",
    "from_part2": false,
    "band": "conditional",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.azn57z7qx2wm"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.azn57z7qx2wm"
   },
   {
    "num": "3.5",
@@ -123,7 +123,7 @@
    "climate": "It reuses existing grid connections instead of new power lines.",
    "from_part2": true,
    "band": "weak",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.ivgyuewbyign"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.ivgyuewbyign"
   },
   {
    "num": "3.6",
@@ -142,26 +142,26 @@
    "climate": "Utilities plan for real projects and build less that goes unused.",
    "from_part2": true,
    "band": "conditional",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.ywkh2xu94mqt"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.ywkh2xu94mqt"
   },
   {
    "num": "4.1",
    "stage": "4",
    "name": "Batteries at Factories, Sold to Data Centers as Capacity",
-   "heading": "Batteries at Factories, Sold to Data Centers as Capacity: My Top Idea, if FERC and Factory Owners Agree",
-   "verdict": "My Top Idea, if FERC and Factory Owners Agree",
+   "heading": "Batteries at Factories, Sold to Data Centers as Capacity: Still My Top Idea, Even After FERC Said No",
+   "verdict": "Still My Top Idea, Even After FERC Said No",
    "problem": "Big new data centers wait years to connect to the grid.",
    "does": "Puts batteries at businesses, which get rent and backup power; data centers buy the capacity, or pay factories to use less power.",
    "why": "Data centers connect years sooner, and hosts earn rent and get backup power.",
    "companies": "Voltus, [Xcel](https://www.xcelenergy.com/) with [Sparkfund](https://www.sparkfund.com/), [Base Power](https://www.basepowercompany.com/), [Outlast Power](https://outlastpower.com/), [Convergent Energy + Power](https://www.convergentep.com/), [Royal Powers Energy](https://rpenergyinc.com/)",
    "page": 14,
    "hid": "h.60es3kb58aze",
-   "view": "My top idea, if FERC and factory owners agree",
-   "kill": "FERC could reject PJM’s rule, and hosts may refuse the batteries.",
+   "view": "Still my top idea, even after FERC said no",
+   "kill": "FERC rejected PJM’s rule on October 9, 2026, so the mandated buyers never arrive, and hosts may refuse the batteries.",
    "climate": "It adds batteries that store solar and wind power for the hours the grid needs it, or cuts factory use at the grid’s peak.",
    "from_part2": false,
    "band": "top",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.60es3kb58aze"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.60es3kb58aze"
   },
   {
    "num": "4.2",
@@ -180,7 +180,7 @@
    "climate": "Utilities connect big sites safely without building the grid for the worst case.",
    "from_part2": false,
    "band": "promising",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.xl1tjsgt8ep8"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.xl1tjsgt8ep8"
   },
   {
    "num": "4.3",
@@ -195,11 +195,11 @@
    "page": 21,
    "hid": "h.1v8wvwhguxjh",
    "view": "Works while NVIDIA leaves utilities to partners",
-   "kill": "NVIDIA’s DSX Flex could start taking requests straight from utilities.",
+   "kill": "NVIDIA’s DSX Flex could start taking requests straight from utilities, or utilities could install a relay that cuts the site automatically and skip the middleman.",
    "climate": "Data centers connect without new power plants built for the grid’s busiest hours.",
    "from_part2": false,
    "band": "conditional",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.1v8wvwhguxjh"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.1v8wvwhguxjh"
   },
   {
    "num": "4.4",
@@ -218,7 +218,7 @@
    "climate": "It gets more computing from existing grid connections.",
    "from_part2": true,
    "band": "weak",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.xkyj1zptwjmw"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.xkyj1zptwjmw"
   },
   {
    "num": "4.5",
@@ -237,7 +237,7 @@
    "climate": "Filling idle chips means fewer buildings and power plants built for daytime peaks.",
    "from_part2": true,
    "band": "weak",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.7x3auprruo47"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.7x3auprruo47"
   },
   {
    "num": "4.6",
@@ -256,7 +256,7 @@
    "climate": "Batteries go in at factories that are already wired, with no wait for new connections.",
    "from_part2": true,
    "band": "weak",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.ej53jwmi0pqg"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.ej53jwmi0pqg"
   },
   {
    "num": "4.7",
@@ -275,7 +275,7 @@
    "climate": "Utilities build fewer lines and power plants for the busiest hours, when flexible sites cut back.",
    "from_part2": true,
    "band": "conditional",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.kyl29wy68n0q"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.kyl29wy68n0q"
   },
   {
    "num": "5.1",
@@ -294,7 +294,7 @@
    "climate": "Less wasted material, and fewer delays.",
    "from_part2": false,
    "band": "conditional",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.nj4dqx6nskqh"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.nj4dqx6nskqh"
   },
   {
    "num": "5.2",
@@ -313,7 +313,7 @@
    "climate": "Indirect: data centers get built faster.",
    "from_part2": true,
    "band": "weak",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.vbcgkj3hnh5d"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.vbcgkj3hnh5d"
   },
   {
    "num": "5.3",
@@ -332,7 +332,7 @@
    "climate": "Towns accept projects from developers who keep their promises.",
    "from_part2": false,
    "band": "conditional",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.cjaia4p6ai1y"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.cjaia4p6ai1y"
   },
   {
    "num": "6.1",
@@ -351,7 +351,7 @@
    "climate": "Sites run their batteries, cooling, and power plants better, even after the gas plants become backup.",
    "from_part2": false,
    "band": "top",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.chk0fpjv98oa"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.chk0fpjv98oa"
   },
   {
    "num": "6.2",
@@ -370,7 +370,7 @@
    "climate": "Specialist crews run on-site power plants more efficiently.",
    "from_part2": false,
    "band": "promising",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.dzhhd5kd9mr9"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.dzhhd5kd9mr9"
   },
   {
    "num": "6.3",
@@ -389,7 +389,7 @@
    "climate": "Fewer truck trips and less spare equipment.",
    "from_part2": true,
    "band": "weak",
-   "url": "https://docs.google.com/document/d/1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF/edit#heading=h.akgqbjz33xk6"
+   "url": "https://docs.google.com/document/d/1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ/edit#heading=h.akgqbjz33xk6"
   }
  ]
 }

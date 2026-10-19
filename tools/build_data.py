@@ -16,7 +16,7 @@ from pathlib import Path
 DOCS = {
     1: {"id": "1DXoTDw3UmeyP8IgkP54IIlB7v-kEA7hf5ZUiXX15lTg", "label": "Part I"},
     2: {"id": "1cnM9kHOUb_kDVKs3fx8s-zxGqKIp6gTBdsKntI3T9xo", "label": "Part II"},
-    3: {"id": "1ItgsgvTi4BkJasZtyCY6A4x_6HsS0yhF", "label": "Part III"},
+    3: {"id": "1QHeZWoxJoQUim5k-_MILJcq6IrQIl9gs0fu2a5UXovQ", "label": "Part III"},
 }
 
 SKIP_TITLES = re.compile(
