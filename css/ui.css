@@ -1,0 +1,200 @@
+/* ------------------------------------------------------------------
+   ui.css - icons, motion and hover states.
+   Layered on top of site.css. Everything here degrades to the plain
+   page if JavaScript is off or the reader prefers reduced motion.
+------------------------------------------------------------------ */
+
+:root {
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow: 0 1px 2px rgba(20, 22, 28, 0.04), 0 8px 24px -12px rgba(20, 22, 28, 0.16);
+  --shadow-lift: 0 2px 4px rgba(20, 22, 28, 0.05), 0 16px 32px -14px rgba(20, 22, 28, 0.22);
+}
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.ico {
+  width: 1em; height: 1em; flex: none;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round;
+  vertical-align: -0.12em;
+}
+
+/* ---------- scroll progress ---------- */
+.progress {
+  position: fixed; inset: 0 0 auto 0; height: 2px; z-index: 50;
+  pointer-events: none; background: transparent;
+}
+.progress i { display: block; height: 100%; width: 0; background: var(--accent); }
+
+/* ---------- scroll reveal ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .rv { opacity: 0; transform: translateY(12px); }
+  .rv.in {
+    opacity: 1; transform: none;
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  }
+  body.js .top > .wrap > * { animation: rise 0.7s var(--ease) backwards; }
+  body.js .byline { animation-delay: 0.02s; }
+  body.js h1 { animation-delay: 0.08s; }
+  body.js .sub { animation-delay: 0.14s; }
+  body.js .lead { animation-delay: 0.2s; }
+  body.js .reads { animation-delay: 0.26s; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+
+/* ---------- facts strip ---------- */
+.facts-row p { position: relative; }
+.facts-row b { font-variant-numeric: tabular-nums; }
+.fact-label { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.88rem; }
+.fact-label .ico { color: var(--accent); opacity: 0.85; width: 0.95em; height: 0.95em; }
+
+/* ---------- read buttons ---------- */
+.read {
+  position: relative; overflow: hidden;
+  transition: background 0.2s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.read:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.read:active { transform: translateY(0); }
+.read-main { display: inline-flex; align-items: center; gap: 0.5rem; }
+.read-main .ico { transition: transform 0.25s var(--ease); }
+.read:hover .read-main .ico { transform: translateX(4px); }
+
+.btn { transition: background 0.2s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease); }
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+
+/* ---------- tab bar ---------- */
+body.js .tabbar-row { position: relative; }
+body.js .tabbar button { transition: color 0.2s var(--ease); }
+body.js .tabbar button[aria-selected="true"] { border-bottom-color: transparent; }
+.tab-ink {
+  position: absolute; bottom: 0; left: 0; height: 2px; width: 0;
+  background: var(--accent); border-radius: 2px 2px 0 0;
+  transition: transform 0.35s var(--ease), width 0.35s var(--ease);
+}
+@media (prefers-reduced-motion: reduce) { .tab-ink { transition: none; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  body.js [role="tabpanel"]:not([hidden]) { animation: panel 0.35s var(--ease); }
+}
+@keyframes panel { from { opacity: 0; transform: translateY(6px); } }
+
+/* ---------- cards ---------- */
+.fw {
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.fw:hover { border-color: #c7d2f2; box-shadow: var(--shadow); transform: translateY(-2px); }
+.fw-part { display: inline-flex; align-items: center; gap: 0.35rem; }
+
+.fw-item { transition: border-color 0.2s var(--ease), background 0.2s var(--ease); }
+.fw-item:hover { border-color: #c7d2f2; background: #fff; }
+.fw-item > summary::after { transition: transform 0.25s var(--ease), color 0.2s var(--ease); }
+.fw-item[open] > summary::after { transform: rotate(180deg); }
+.fw-item > summary:hover::after { color: var(--accent); }
+
+/* ---------- disclosure contents ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .fw-item[open] .fw-why,
+  .fw-item[open] .fw-ideas,
+  .idea[open] .idea-body,
+  .toc[open] ol { animation: reveal 0.3s var(--ease); }
+}
+@keyframes reveal { from { opacity: 0; transform: translateY(-6px); } }
+
+/* ---------- verdict board ---------- */
+.idea summary {
+  transition: background 0.2s var(--ease), border-left-color 0.2s var(--ease);
+}
+.idea summary:hover { background: var(--wash); }
+.idea summary::after { transition: transform 0.25s var(--ease), color 0.2s var(--ease); }
+.idea[open] summary::after { transform: rotate(180deg); }
+.idea[open] summary { background: var(--wash); }
+.band h3 .ico { color: var(--accent); }
+.band-dot {
+  width: 7px; height: 7px; border-radius: 50%; flex: none;
+  display: inline-block; align-self: center; background: var(--accent);
+}
+.band-promising .band-dot { background: #8aa6ee; }
+.band-conditional .band-dot { background: #cdd3de; }
+.band-weak .band-dot { background: #fff; border: 1px solid var(--line); }
+
+.tabs button { transition: border-color 0.2s var(--ease), color 0.2s var(--ease), background 0.2s var(--ease); }
+
+/* ---------- papers ---------- */
+.paper { transition: background 0.25s var(--ease); }
+.rail .part { display: inline-flex; align-items: center; gap: 0.35rem; }
+.toc summary { transition: color 0.2s var(--ease); }
+
+/* ---------- field ---------- */
+.field-text h3 { display: flex; align-items: center; gap: 0.45rem; }
+.field-text h3 .ico { color: var(--accent); width: 0.95em; height: 0.95em; }
+.field-text li { display: flex; align-items: baseline; gap: 0.5rem; }
+.field-text li::before {
+  content: ''; width: 4px; height: 4px; border-radius: 50%;
+  background: var(--line); flex: none; transform: translateY(-2px);
+}
+.map .dot { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .map.in .dot { animation: pop 0.45s var(--ease) backwards; }
+}
+@keyframes pop { from { opacity: 0; transform: scale(0.2); } }
+
+/* ---------- headshot ---------- */
+.headshot { box-shadow: var(--shadow); transition: transform 0.3s var(--ease); }
+.headshot:hover { transform: translateY(-2px) scale(1.01); }
+
+/* ---------- feedback ---------- */
+.fb-open {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 40;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font: inherit; font-size: var(--fs-label); font-weight: 500;
+  padding: 0.6rem 1rem; cursor: pointer;
+  background: var(--ink); color: #fff; border: 0; border-radius: 999px;
+  box-shadow: var(--shadow-lift);
+  transition: transform 0.25s var(--ease), background 0.2s var(--ease);
+}
+.fb-open:hover { transform: translateY(-2px); background: #000; }
+
+.fb-panel {
+  position: fixed; right: 1.25rem; bottom: 4.4rem; z-index: 41;
+  width: min(22rem, calc(100vw - 2.5rem));
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: var(--shadow-lift); padding: 1.1rem;
+}
+.fb-panel[hidden] { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .fb-panel { animation: rise 0.25s var(--ease); }
+}
+.fb-panel h2 { font-size: var(--fs-body); font-weight: 500; margin-bottom: 0.15rem; }
+.fb-panel .fb-sub { font-size: var(--fs-label); color: var(--mute); margin-bottom: 0.8rem; }
+.fb-panel label { display: block; font-size: var(--fs-label); color: var(--soft); margin-bottom: 0.25rem; }
+.fb-panel textarea, .fb-panel input {
+  font: inherit; font-size: var(--fs-label); width: 100%;
+  border: 1px solid var(--line); border-radius: 8px; padding: 0.5rem 0.6rem;
+  color: var(--ink); background: #fff; margin-bottom: 0.7rem; resize: vertical;
+}
+.fb-panel textarea { min-height: 6.5rem; line-height: 1.5; }
+.fb-panel textarea:focus, .fb-panel input:focus { border-color: var(--accent); outline: none; }
+.fb-row { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
+.fb-send {
+  font: inherit; font-size: var(--fs-label); font-weight: 500; cursor: pointer;
+  padding: 0.5rem 1rem; background: var(--accent); color: #fff; border: 0; border-radius: 8px;
+  transition: background 0.2s var(--ease);
+}
+.fb-send:hover { background: #244fc7; }
+.fb-cancel {
+  font: inherit; font-size: var(--fs-label); cursor: pointer;
+  background: none; border: 0; color: var(--mute); padding: 0.5rem 0;
+}
+.fb-cancel:hover { color: var(--ink); }
+.fb-note { font-size: 0.72rem; color: var(--mute); margin-top: 0.7rem; line-height: 1.5; }
+.fb-note a { color: var(--soft); }
+@media (max-width: 560px) {
+  .fb-open { right: 1rem; bottom: 1rem; }
+  .fb-panel { right: 1rem; left: 1rem; bottom: 4.2rem; width: auto; }
+}
+
+/* ---------- footnotes ---------- */
+sup a { transition: color 0.15s var(--ease); }
+sup a:hover { color: var(--ink); }
+.footnotes li { transition: color 0.2s var(--ease); }
+.footnotes li:target { color: var(--ink); }
